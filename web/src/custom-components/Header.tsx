@@ -1,36 +1,47 @@
-"use client";
-
 import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useAppearance } from "@/hooks/use-appearance"
 import { useLanguage } from "@/hooks/use-language"
+import { useTranslation } from "react-i18next";
+
+type Theme = 'light' | 'dark' | 'system';
+type Language = 'en' | 'es';
 
 function Header() {
   const { appearance, updateAppearance } = useAppearance()
   const { language, updateLanguage} = useLanguage()
+  const { t } = useTranslation()
+
+  const theme = {'light': t('global.light'), 'dark':t('global.dark'), 'system':t('global.system')};
+  const languages = ['en', 'es'];
 
   return (
     <div className="header">
       <div className="brand">
-        <h1>Logo</h1>
+        <img src="/a-icon.png" alt="logo" />
       </div>
       <div className="flex gap-2">
         <DropdownMenu>
-          <DropdownMenuTrigger>{appearance.charAt(0).toUpperCase() + appearance.slice(1)}</DropdownMenuTrigger>
+          <DropdownMenuTrigger>{theme[appearance]}</DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuRadioGroup value={appearance} onValueChange={(value) => updateAppearance(value as "light" | "dark" | "system")}>
-              <DropdownMenuRadioItem value="light">Light</DropdownMenuRadioItem>
-              <DropdownMenuRadioItem value="dark">Dark</DropdownMenuRadioItem>
-              <DropdownMenuRadioItem value="system">System</DropdownMenuRadioItem>
+            <DropdownMenuRadioGroup value={appearance} onValueChange={(value) => updateAppearance(value as Theme)}>
+              {(Object.keys(theme) as Theme[]).map((t) => (
+                <DropdownMenuRadioItem key={t} value={t}>
+                  {theme[t]}
+                </DropdownMenuRadioItem>
+              ))}
             </DropdownMenuRadioGroup>
           </DropdownMenuContent>
         </DropdownMenu>
 
         <DropdownMenu>
-          <DropdownMenuTrigger>{ language === 'en' ? 'English' : 'Spanish' }</DropdownMenuTrigger>
+          <DropdownMenuTrigger>{ language === 'en' ? t('global.english') : t('global.spanish')}</DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuRadioGroup value={language} onValueChange={(value) => updateLanguage(value as "en" | "es")}>
-              <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
-              <DropdownMenuRadioItem value="es">Spanish</DropdownMenuRadioItem>
+            <DropdownMenuRadioGroup value={language} onValueChange={(value) => updateLanguage(value as Language)}>
+              {languages.map((lang) => (
+                <DropdownMenuRadioItem key={lang} value={lang}>
+                  {lang === 'en' ? t('global.english') : t('global.spanish')}
+                </DropdownMenuRadioItem>
+              ))}
             </DropdownMenuRadioGroup>
           </DropdownMenuContent>
         </DropdownMenu>

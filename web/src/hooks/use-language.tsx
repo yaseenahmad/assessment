@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import i18n from "i18next";
+import i18n from "@/i18n/i18n";
 
 type Language = "en" | "es"
 

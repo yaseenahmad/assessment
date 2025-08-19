@@ -1,0 +1,63 @@
+{
+  "_chunk-UH6JLGW7-B6sXLqZz.js": {
+    "file": "assets/chunk-UH6JLGW7-B6sXLqZz.js",
+    "name": "chunk-UH6JLGW7"
+  },
+  "_index-CZzSrI1c.js": {
+    "file": "assets/index-CZzSrI1c.js",
+    "name": "index",
+    "imports": [
+      "_chunk-UH6JLGW7-B6sXLqZz.js"
+    ]
+  },
+  "node_modules/.pnpm/@react-router+dev@7.8.1_@types+node@22.17.2_jiti@2.5.1_lightningcss@1.30.1_react-dom@19_a2a0676aa45429b2e3066e3cc9b34821/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx": {
+    "file": "assets/entry.client-B79W5bsM.js",
+    "name": "entry.client",
+    "src": "node_modules/.pnpm/@react-router+dev@7.8.1_@types+node@22.17.2_jiti@2.5.1_lightningcss@1.30.1_react-dom@19_a2a0676aa45429b2e3066e3cc9b34821/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx",
+    "isEntry": true,
+    "imports": [
+      "_chunk-UH6JLGW7-B6sXLqZz.js",
+      "_index-CZzSrI1c.js"
+    ]
+  },
+  "src/root.tsx?__react-router-build-client-route": {
+    "file": "assets/root-kuCLrTam.js",
+    "name": "root",
+    "src": "src/root.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-UH6JLGW7-B6sXLqZz.js"
+    ],
+    "css": [
+      "assets/root-Cmfirr79.css"
+    ]
+  },
+  "src/routes/$.tsx?__react-router-build-client-route": {
+    "file": "assets/_-B8gb3qY3.js",
+    "name": "_",
+    "src": "src/routes/$.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-UH6JLGW7-B6sXLqZz.js"
+    ]
+  },
+  "src/routes/_index.tsx?__react-router-build-client-route": {
+    "file": "assets/_index-ZbdO4WGp.js",
+    "name": "_index",
+    "src": "src/routes/_index.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-UH6JLGW7-B6sXLqZz.js",
+      "_index-CZzSrI1c.js"
+    ]
+  },
+  "src/routes/about.tsx?__react-router-build-client-route": {
+    "file": "assets/about-BPS0rB0e.js",
+    "name": "about",
+    "src": "src/routes/about.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-UH6JLGW7-B6sXLqZz.js"
+    ]
+  }
+}

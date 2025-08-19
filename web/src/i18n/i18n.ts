@@ -4,12 +4,58 @@ import { initReactI18next } from 'react-i18next'
 const resources = {
   en: {
     translation: {
-      story: 'On a quiet summer evening, Sofia sat by the window, watching the sun slowly disappear behind the mountains. She held a small notebook in her hands, writing down her dreams and hopes for the future. Every page was filled with determination, as if she was building a secret map toward the life she truly wanted.'
+      global: {
+        logo: 'Logo',
+        light: 'Light',
+        dark: 'Dark',
+        system: 'System',
+        english: 'English',
+        spanish: 'Spanish',
+      },
+      home: {
+        heading: 'Welcome to Our App',
+        description: 'This is the home page with file-based routing!',
+        meta: {
+          title: 'home page',
+          description: 'Welcome to our application homepage'
+        }
+      },
+      about: {
+        heading: 'About Us',
+        description: 'Learn more about our company and mission.',
+        meta: {
+          title: 'About Us',
+          description: 'Learn more about our company'
+        }
+      },
     }
   },
   es: {
     translation: {
-      story: 'En una tranquila tarde de verano, Sofía se sentó junto a la ventana, observando cómo el sol desaparecía lentamente detrás de las montañas. Sostenía un pequeño cuaderno en sus manos, escribiendo sus sueños y esperanzas para el futuro. Cada página estaba llena de determinación, como si estuviera construyendo un mapa secreto hacia la vida que realmente deseaba.'
+      global: {
+        logo: 'Logo',
+        light: 'Claro',
+        dark: 'Oscuro',
+        system: 'Sistema',
+        english: 'Inglés',
+        spanish: 'Español',
+      },
+      home: {
+        heading: 'Bienvenido a Nuestra Aplicación',
+        description: '¡Esta es la página de inicio con enrutamiento basado en archivos!',
+        meta: {
+          title: 'página de inicio',
+          description: 'Bienvenido a la página principal de nuestra aplicación'
+        }
+      },
+      about: {
+        heading: 'Sobre Nosotros',
+        description: 'Conozca más sobre nuestra empresa y misión.',
+        meta: {
+          title: 'Sobre Nosotros',
+          description: 'Conozca más sobre nuestra empresa'
+        }
+      },
     }
   }
 }
