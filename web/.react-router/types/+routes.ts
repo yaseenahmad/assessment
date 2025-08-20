@@ -13,6 +13,14 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/products": {
+    params: {};
+  };
+  "/products/:id": {
+    params: {
+      "id": string;
+    };
+  };
   "/about": {
     params: {};
   };
@@ -26,7 +34,15 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/about" | "/*";
+    page: "/" | "/products" | "/products/:id" | "/about" | "/*";
+  };
+  "routes/products._index.tsx": {
+    id: "routes/products._index";
+    page: "/products";
+  };
+  "routes/products.$id.tsx": {
+    id: "routes/products.$id";
+    page: "/products/:id";
   };
   "routes/_index.tsx": {
     id: "routes/_index";

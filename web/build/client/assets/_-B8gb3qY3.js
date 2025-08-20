@@ -1,1 +1,0 @@
-import{w as e,p as t}from"./chunk-UH6JLGW7-B6sXLqZz.js";const o=e(function(){return t.jsx("div",{children:t.jsxs("main",{className:"container mx-auto p-4 text-center",children:[t.jsx("h1",{className:"text-4xl font-bold",children:"404"}),t.jsx("p",{className:"text-xl mt-4",children:"Page not found"})]})})});export{o as default};

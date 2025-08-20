@@ -1,47 +1,34 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useAppearance } from "@/hooks/use-appearance"
-import { useLanguage } from "@/hooks/use-language"
-import { useTranslation } from "react-i18next";
-
-type Theme = 'light' | 'dark' | 'system';
-type Language = 'en' | 'es';
+import { useTranslation } from "react-i18next"
 
 function Header() {
-  const { appearance, updateAppearance } = useAppearance()
-  const { language, updateLanguage} = useLanguage()
+  const { theme, language, updateTheme, updateLanguage } = useAppearance()
   const { t } = useTranslation()
-
-  const theme = {'light': t('global.light'), 'dark':t('global.dark'), 'system':t('global.system')};
-  const languages = ['en', 'es'];
 
   return (
     <div className="header">
       <div className="brand">
-        <img src="/a-icon.png" alt="logo" />
+        <h1>{t('common.logo')}</h1>
       </div>
       <div className="flex gap-2">
         <DropdownMenu>
-          <DropdownMenuTrigger>{theme[appearance]}</DropdownMenuTrigger>
+          <DropdownMenuTrigger>{theme.charAt(0).toUpperCase() + theme.slice(1)}</DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuRadioGroup value={appearance} onValueChange={(value) => updateAppearance(value as Theme)}>
-              {(Object.keys(theme) as Theme[]).map((t) => (
-                <DropdownMenuRadioItem key={t} value={t}>
-                  {theme[t]}
-                </DropdownMenuRadioItem>
-              ))}
+            <DropdownMenuRadioGroup value={theme} onValueChange={(value) => updateTheme(value as "light" | "dark" | "system")}>
+              <DropdownMenuRadioItem value="light">{t('common.light')}</DropdownMenuRadioItem>
+              <DropdownMenuRadioItem value="dark">{t('common.dark')}</DropdownMenuRadioItem>
+              <DropdownMenuRadioItem value="system">{t('common.system')}</DropdownMenuRadioItem>
             </DropdownMenuRadioGroup>
           </DropdownMenuContent>
         </DropdownMenu>
 
         <DropdownMenu>
-          <DropdownMenuTrigger>{ language === 'en' ? t('global.english') : t('global.spanish')}</DropdownMenuTrigger>
+          <DropdownMenuTrigger>{t(`common.${language === 'en' ? 'english' : 'spanish'}`)}</DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuRadioGroup value={language} onValueChange={(value) => updateLanguage(value as Language)}>
-              {languages.map((lang) => (
-                <DropdownMenuRadioItem key={lang} value={lang}>
-                  {lang === 'en' ? t('global.english') : t('global.spanish')}
-                </DropdownMenuRadioItem>
-              ))}
+            <DropdownMenuRadioGroup value={language} onValueChange={(value) => updateLanguage(value as "en" | "es")}>
+              <DropdownMenuRadioItem value="en">{t('common.english')}</DropdownMenuRadioItem>
+              <DropdownMenuRadioItem value="es">{t('common.spanish')}</DropdownMenuRadioItem>
             </DropdownMenuRadioGroup>
           </DropdownMenuContent>
         </DropdownMenu>
