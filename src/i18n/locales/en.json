@@ -1,0 +1,14 @@
+{
+  "common": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "home": {
+    "title": "Theme & Language Toggle App",
+    "subtitle": "A simple web application demonstrating cookie-based session management with React Router v7 and shadcn/ui",
+    "description": "This application showcases modern React patterns including theme switching (light/dark/system), language switching (English/Spanish), and persistent cookie storage across browser sessions."
+  }
+}
